@@ -20,7 +20,7 @@ variable "owner" {
 
 variable "subnet_ids" {
   description = "ID da subnet utilizada para criar as instâncias do auto scaling"
-  type        = list
+  type        = list(any)
 }
 
 variable "aws_vpc" {
@@ -41,23 +41,23 @@ variable "storage" {
 variable "db_username" {
   description = "Nome do usuário root do banco de dados"
   type        = string
-  sensitive = true
+  sensitive   = true
 }
 
 variable "db_password" {
   description = "Senha do usuário root do banco de dados"
   type        = string
-  sensitive = true
+  sensitive   = true
 }
 
 variable "domain" {
   description = "ID do Directory Active Directory para incluir a instancia no domínio"
   type        = string
-  default = ""
+  default     = ""
 }
 
 variable "domain_iam_role_name" {
   description = "Role para acesso ao Directory Active Directory"
   type        = string
-  default = ""
+  default     = ""
 }
